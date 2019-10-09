@@ -4,6 +4,10 @@ const port = /*8080;*/process.env.PORT;
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+app.get('/', function(req, res){
+  res.sendFile(__dirname + '/template/index.html');
+});
+
 io.on('connection', function(socket) {
   /**
   socket.emit('request', ###); // emit an event to the socket
