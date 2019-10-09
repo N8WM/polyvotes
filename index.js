@@ -8,6 +8,10 @@ app.get('/', function(req, res){
   res.sendFile(__dirname + '/template/index.html');
 });
 
+app.get('/admin', function(req, res){
+  res.sendFile(__dirname + '/template/admin.html');
+});
+
 io.on('connection', function(socket) {
   /**
   socket.emit('request', ###); // emit an event to the socket
