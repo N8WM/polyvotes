@@ -11,6 +11,7 @@
   "dependencies": {
     "express": "^4.16.4",
     "ip": "^1.1.5",
+    "sha1": "^1.1.1",
     "socket.io": "^2.1.1"
   }
 }
