@@ -6,7 +6,7 @@ window.onload = function() {
   socket.emit("requestLoginPage");
 }
 
-document.getElementById("login").addEventListener("mouseup", function() {
+document.getElementById("log-in").addEventListener("mouseup", function() {
   
   requestAdminLogin();
 });
