@@ -1,4 +1,4 @@
 window.onload = function() {
-  var ip = ip.address();
+  var ip = 192.168.1.1;
   document.getElementById("ip").innerHTML = ip;
 }
