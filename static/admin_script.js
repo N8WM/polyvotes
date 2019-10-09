@@ -3,13 +3,12 @@ var username, password, poll, option1, option2, update, reset;
 
 window.onload = function() {
   
+  document.getElementById("log-in").addEventListener("mouseup", function() {
+    
+    requestAdminLogin();
+  });
   socket.emit("requestLoginPage");
 }
-
-document.getElementById("log-in").addEventListener("mouseup", function() {
-  
-  requestAdminLogin();
-});
 
 function requestAdminLogin() {
   
