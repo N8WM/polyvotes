@@ -86,7 +86,7 @@ socket.on("loginPageAdmitted-login", function() {
 
 socket.on("adminLoginAdmitted", function(HTML) {
 
-  body.innerHTML = HTML;
+  document.body.innerHTML = HTML;
   poll = document.getElementById("poll");
   option1 = document.getElementById("option1");
   option2 = document.getElementById("option2");
