@@ -21,7 +21,7 @@ function requestAdminLogin() {
 
 function loginFailed() {
 
-  document.getElementById("li-error-area").style.display = block;
+  document.getElementById("li-error-area").style.display = "block";
 }
 
 function updatePoll() {
