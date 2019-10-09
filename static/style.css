@@ -17,6 +17,7 @@ html, body {
 }
 
 #option1-container, #option2-container {
+  display: inline-block;
   box-sizing: border-box;
   width: 40%;
   height: 50%;
