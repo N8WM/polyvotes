@@ -81,7 +81,7 @@ socket.on("loginPageAdmitted-new", function() {
 
 socket.on("loginPageAdmitted-login", function() {
   
-  document.getElementById("title").innerHTML = "Put in your username and password";
+  document.getElementById("title").innerHTML = "Admin username and password";
 });
 
 socket.on("adminLoginAdmitted", function(HTML) {
