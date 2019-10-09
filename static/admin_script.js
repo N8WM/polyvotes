@@ -35,6 +35,46 @@ function resetPoll() {
   socket.emit("requestResetPoll", username, password);
 }
 
+function updateSuccessMessage() {
+  
+  document.getElementById("info-area").style.display = "block";
+  document.getElementById("info-area").innerHTML = "Update successful";
+  setTimeout(function() {
+    
+    document.getElementById("info-area").style.display = "none";
+  }, 10000);
+}
+
+function updateFailureMessage() {
+  
+  document.getElementById("info-area").style.display = "block";
+  document.getElementById("info-area").innerHTML = "Update failed";
+  setTimeout(function() {
+    
+    document.getElementById("info-area").style.display = "none";
+  }, 10000);
+}
+
+function resetSuccessMessage() {
+  
+  document.getElementById("info-area").style.display = "block";
+  document.getElementById("info-area").innerHTML = "Reset successful";
+  setTimeout(function() {
+    
+    document.getElementById("info-area").style.display = "none";
+  }, 10000);
+}
+
+function resetFailureMessage() {
+  
+  document.getElementById("info-area").style.display = "block";
+  document.getElementById("info-area").innerHTML = "Reset failed";
+  setTimeout(function() {
+    
+    document.getElementById("info-area").style.display = "none";
+  }, 10000);
+}
+
 socket.on("loginPageAdmitted-new", function() {
   
   document.getElementById("title").innerHTML = "Choose a username and password";
@@ -61,4 +101,24 @@ socket.on("adminLoginAdmitted", function(HTML) {
 socket.on("adminLoginDenied", function(HTML) {
 
   loginFailed();
+});
+
+socket.on("updatePollSuccessful", function() {
+  
+  updateSuccessMessage();
+});
+
+socket.on("updatePollFailed", function() {
+  
+  updateFailureMessage();
+});
+
+socket.on("resetPollSuccessful", function() {
+  
+  resetSuccessMessage();
+});
+
+socket.on("resetPollFailed", function() {
+  
+  resetFailureMessage();
 });
