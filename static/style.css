@@ -25,7 +25,7 @@ html, body {
   margin: 10px;
 }
 
-#option-container-selected {
+.option-container-selected {
   border: solid 10px #CCC !important;
 }
 
