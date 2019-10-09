@@ -6,8 +6,8 @@ var io = require('socket.io')(http);
 
 var sha1 = require('sha1');
 
-var adminUser = adminUser||null;
-var adminHashedPassword = adminHashedPassword||null;
+var adminUser = "nutch"; //adminUser||null;
+var adminHashedPassword = "a3ced1d391e774a22f6dcc1b70746dd7b3fe8316"; //adminHashedPassword||null;
 
 var poll = poll||"No active poll right now.";
 var option1 = option1||"Aww darn!";
