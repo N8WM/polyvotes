@@ -1,1 +1,18 @@
-Welcome to the admin page
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="/admin_script.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <title>Polyvotes Admin</title>
+  </head>
+  <body>
+    <center>
+      <h1 id="title" style="margin-bottom:5px;"></h1>
+      <div id="li-error-area" style="display:none;background-color:#FAA;color:#C00;border:solid 1px #C00; padding:5px;margin:5px;">username and password do not match</div>
+      <input type="text" id="uname" placeholder="username" /><br />
+      <input type="password" id="pword" placeholder="password" /><br />
+      <input type="button" id="login" value="Log in" />
+    </center>
+  </body>
+</html>
