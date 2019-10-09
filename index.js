@@ -63,7 +63,8 @@ io.on('connection', function(socket) {
     
     if (bypass) {
       
-      newHTML = "Poll:&nbsp;<input type='text' id='poll' placeholder='poll' value='" + poll + "' /><br />" +
+      newHTML = "<div id='info-area' style='display:none;border:solid 1px #000; padding:5px;margin:5px;'></div>" +
+                "Poll:&nbsp;<input type='text' id='poll' placeholder='poll' value='" + poll + "' /><br />" +
                 "Option 1:&nbsp;<input type='text' id='option1' placeholder='option 1' value='" + option1 + "' /><br />" +
                 "Option 2:&nbsp;<input type='text' id='option2' placeholder='option 2' value='" + option2 + "' /><br />" +
                 "<input type='button' id='update-poll' value='Update poll' />" +
