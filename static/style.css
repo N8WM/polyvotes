@@ -12,10 +12,6 @@ html, body {
   padding: 15px;
 }
 
-#poll-container {
-  
-}
-
 #option1-container, #option2-container {
   display: inline-block;
   box-sizing: border-box;
