@@ -1,19 +1,20 @@
-const { Client } = require('pg');
-
-const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: true,
-});
-
-client.connect();
-
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
-  if (err) throw err;
-  for (let row of res.rows) {
-    console.log(JSON.stringify(row));
-  }
-  client.end();
-});
+const { Pool, Client } = require('pg');
+// pools will use environment variables
+// for connection information
+const pool = new Pool();
+pool.query('SELECT NOW()', (err, res) => {
+  console.log(err, res);
+  pool.end();
+})
+// you can also use async/await
+const res = await pool.query('SELECT NOW()')
+await pool.end();
+// clients will also use environment variables
+// for connection information
+const client = new Client();
+await client.connect();
+const res = await client.query('SELECT NOW()');
+await client.end();
 
 const express = require('express');
 const app = express();
@@ -21,6 +22,7 @@ const port = /*8080;*/process.env.PORT;
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+var ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
 var sha1 = require('sha1');
 
 var adminUser = "nutch"; //adminUser||null;
